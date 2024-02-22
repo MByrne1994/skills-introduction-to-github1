@@ -1,0 +1,69 @@
+Fruit Salad Variables
+
+Max Options 8
+
+Fruits:
+Oranges
+Apples
+Lemon
+Bannanna
+
+Salads:
+
+Salad=
+if Oranges =>4 Salad = Citrus Salad
+if Apples => 4 Salad = Crunchy Salad
+If Lemon => 4 Salad = Zesty Salad
+If Bannanna =>4 Salad = Smooth Salad
+if no Fruit =>4 Salad = Balanced Salad
+
+Salad Order{
+
+Please chose Your Ingredients
+Oranges = UserInput
+Apples = UserInput
+Lemon = UserInput
+Bannana = UserInput
+if.Total=8.Elseif.User.Done.End
+}
+
+Prepare Salad{
+
+While.Salad=CitrusSalad[
+add.xOranges
+if.Apples =>1.Add.xApples
+if.Lemon =>1.Add.xLemon
+if.Bannanna =>1.Add.xBannanna
+]
+
+While.Salad=Crunchy Salad[
+add.xApples
+if.Oranges =>1.Add.xOranges
+if.Lemon =>1.Add.xLemon
+if.Bannanna =>1.Add.xBannanna
+]
+
+While.Salad=Zesty Salad[
+add.xLemon
+if.Oranges =>1.Add.xOranges
+if.Apples =>1.Add.xApples
+if.Bannanna =>1.Add.xBannanna
+]
+
+While.Salad=Smooth Salad[
+add.xBannanna
+if.Oranges =>1.Add.xOranges
+if.Apples =>1.Add.xApples
+if.Lemon =>1.Add.xLemon
+]
+ 
+While.Salad=Balanced Salad[
+if.Apples =>1.add.xApples
+if.Oranges =>1.Add.xOranges
+if.Apples =>1.Add.xApples
+if.Lemon =>1.Add.xLemon
+]
+}
+ 
+ 
+

@@ -1,0 +1,157 @@
+Burger variables:
+
+Meat= (1.Beef,2.Chicken,3.Fish)
+
+Bun= (1.Sesame,2.Ciabatta,3.Brioche)
+
+Topings= (1.Lettuce,2.Bacon,3.Cheese,4.Pickles,5.Onions)
+
+Toppings1= UserInput(1,2,3,4,5)
+
+Toppings2= Topings-Topings1 
+
+Sauce= (1.Ketchup,2.Mayonaise,3.Hot Sauce,4.Secret Sauce)
+
+Side Variables
+
+Sides=(a.Chips,b.Onion Rings,c.Coleslaw,d.Corn,e.Curly Fries)
+Side1 = Sides.UserInput(a,b,c,d,e)
+Side2 = Sides - Side1
+
+Drink Variables
+
+Drink= (1.Coke,2.Sprite,3.Fanta,4.Irn Bru,5.Lucozade,6.Tea,7.Coffee)
+
+Functions:
+
+Burger order{
+Display.Meat("1.Beef,2.Chicken,3.Fish")
+Meat= UserInput(1,2,3)
+Confirm.Meat.(boolean Y/N)
+Display.Bun(1.Sesame,2.Ciabatta,3.Brioche)
+Bun=UserInput(1,2,3)
+Confirm.Bun.(boolean Y/N)
+Display.Toppings1(1.Lettuce,2.Bacon,3.Cheese,4.Pickles,5.Onions)
+Toppings1=UserInput(1,2,3,4,5,No Toppings)
+IF Toppings1=(1,2,3,4,5) Display.Topings2.ElseIF Toppings= "No Toppings" Then Display.Sauce
+Toppings2=UserInput(1,2,3,4)
+Confirm.Toppings.(boolean Y/N)
+Display.Sauce(1.Ketchup,2.Mayonaise,3.Hot Sauce,4.Secret Sauce)
+Sauce=UserInput(1,2,3,4) ELSE NoSauce
+Confirm.Sauce(boolean Y/N)
+}
+
+Side order{
+Display.Sides
+Side1= UserInput.Sides(a.Chips,b.Onion Rings,c.Coleslaw,d.Corn,e.Curly Fries) ElseIf Side1=NoSide.Confirm.Sides
+Display.Side2
+Side2=UserInput.(a,b,c,d)
+Confirm.Sides
+}
+
+Drink order{
+Display.Drink
+Drink=UserInput.Drink(1,2,3,4,5,6,7) Else NoDrink
+Confirm.Drink(boolean Y/N)
+}
+
+BurgerPrep{
+
+If Burger = "1" Then[
+Heat.Pan(160 Degrees)
+Add.Burger.to.Pan.for(10 Minutes)
+When.minutes => "5".Flip.Burger
+While Burger+Pan = True[
+Heat.Oven(140 Degrees)
+Add.Butter.to.Buns
+Add.Buns.to.Oven
+When.Buns+Oven =/10Minutes.Remove.Buns.Oven
+]
+Add.Topping1.to.Bun
+When Burger+Pan = Burger-Pan
+Add.Burger.to.Topping1
+Add.Topping2.to.Burger
+Add.Sauce.to.Topping2
+Add.Sauce.to.Bun
+Close.Bun]
+
+ElseIf.Burger="2" Then[
+Add.Herbs+Spices(hidden).to.Burger
+Heat.CookingOil.to.180Degrees
+Dip.Burger.in.CookingOil.for(5minutes)
+If Burger+CookingOil=True[
+Heat.Oven(140 Degrees)
+Add.Butter.to.Buns
+Add.Buns.to.Oven.for(10minutes)
+When.Buns+Oven >10Minutes.Remove.Buns.Oven
+]
+Add.Topping1.to.Bun
+When.Burger+CookingOil =/> 5minutes.Burger-CookingOil
+Add.Burger.to.Topping1
+Add.Topping2.to.Burger
+Add.Sauce.to.Topping2
+Add.Sauce.to.Bun
+Close.Bun]
+
+ElseIf.Burger="3" Then[
+Heat.CookingOil.to.180Degrees
+Burger+CookingOil.for."6Minutes"
+When.Burger+CookingOil. =/> "3 Minutes" 
+Turn.Burger
+When.Burger+CookingOil.=/> "6 Minutes"
+Burger-CookingOil
+If Burger+CookingOil=True[
+Heat.Oven(140 Degrees)
+Add.Butter.to.Buns
+Add.Buns.to.Oven.for(10minutes)
+When.Buns+Oven >10Minutes.Remove.Buns.Oven
+Add.Topping1.to.Bun
+Add.Burger.to.Topping1
+Add.Topping2.to.Burger
+Add.Sauce.to.Topping2
+Add.Sauce.to.Bun
+Close.Bun]
+}
+
+SidePrep{
+
+If Side1 or Side2 = ("a","b","e")
+Then[
+Heat.CookingOil.to.180Degrees
+If.Side1 or Side2 ="a[
+Chips+CookingOil
+When.Chips+CookingOil. =/> 7Minutes
+Chips-CookingOil
+If.Side1 or Side2 = "b"[
+OnionRings+CookingOil
+When.OnionRings+CookingOil. =/> 7Minutes
+OnionRings-CookingOil
+ElseIf Side1 or Side2 ="e"
+Curly Fries+CookingOil
+When.Curly Fries+CookingOil. =/> 7Minutes
+Chips-CookingOil
+]
+
+If Side1 or Side2 = ("c","d")[
+If.Side1 = "c" 
+Coleslaw-Fridge
+elseIf. Side1= "d"
+Corn-Fridge
+]
+If.Side2 = "c" 
+Coleslaw-Fridge
+elseIf. Side2= "d"
+Corn-Fridge
+]
+}
+
+
+
+
+
+
+
+
+
+
+
